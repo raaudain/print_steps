@@ -31,4 +31,28 @@ function steps(n){
  
 }
 
+
+// Solution #3
+function steps(n, row = 0, stair = ""){
+  if(row === n){
+    return;
+  }
+
+  // When you reach the end of the stair
+  if (n === stair.length) {
+    console.log(stair);
+    return steps(n, row + 1);
+  }
+
+  // Assembles the staircase
+  if (stair.length <= row) {
+    stair += "#";
+  }
+  else{
+    stair += " ";
+  }
+  steps(n, row, stair);
+
+}
+
 steps(10);
